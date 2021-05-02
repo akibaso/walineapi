@@ -7,10 +7,16 @@ module.exports = Application({
   async postSave(comment, pComment) {
     if(pComment != null)
     {
-      var content = '「 OkYes博客 」有新回复了'+'\r\n'+'${comment.nick} 对 ${pComment.nick} 在 ${comment.url} 说到:'+'\r\n'+'${comment.comment}'
+      var content = `
+「 OkYes博客 」有新回复了
+${comment.nick} 对 ${pComment.nick} 在 ${comment.url} 说到:
+${comment.comment}`
     }
     else{
-      var content = '「 OkYes博客 」有新评论了'+'\r\n'+'${comment.nick} 在 ${comment.url} 说到:'+'\r\n'+'${comment.comment}'
+      var content = `
+「 OkYes博客 」有新评论了
+ ${comment.nick} 在 ${comment.url} 说到:
+ ${comment.comment}`
     }
     const https = require('https')
     const options = {
