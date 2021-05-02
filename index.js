@@ -1,10 +1,5 @@
 const Application = require('@waline/vercel');
-
-module.exports = Application({
-  async postSave(comment) {
-    // do what ever you want after save comment
-  },
-  const contentQQ =
+const contentQQ =
       think.config('QQTemplate') ||
       `💬 {{site.name|safe}} 有新评论啦
 {{self.nick}} 评论道：
@@ -23,4 +18,8 @@ module.exports = Application({
       },
     });
   }
+module.exports = Application({
+  async postSave(comment) {
+    // do what ever you want after save comment
+  },
 });
